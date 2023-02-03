@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="icon" type="image/png" href="https://github.com/soupfoo.png">
+        <title>$HOME</title>
+    </head>
+
+    <body>
+        <ul class="nav">
+            <li><a onclick="home()">🏠 home</a></li>
+            <li><a onclick="anime()">🇯🇵 anime</a></li>
+            <li><a onclick="movies()">📺 movies</a></li>
+            <li><a href="https://github.com/soupfoo">🐈 github</a></li>
+        </ul>
+
+        <div class="container">
+            <div class="fetch">
+                <h3>$ ./fetch.sh </h3>
+                <img class="pic" src="https://github.com/soupfoo.png"> <br>
+                usr - soup <br>
+                langs - C <br> <br>
+                
+                things I like: <br>
+                - dumplings <br>
+                - rain <br>
+                - cats <br>
+            </div>
+
+
+            <div class="content" id="home" style="display:block;">
+                <h3>$ under construction 🛠️</h3>
+            </div>
+
+            <div class="content" id="anime" style="display:none;">
+                <h3>$ anime </h3>
+                Hyouka <br>
+                <img src="https://c.tenor.com/GGA8K8d9L7kAAAAC/hyouka-chitanda-eru.gif" class="pic"><br>
+
+                Kimetsu no yaiba <br>
+                <img src="https://c.tenor.com/9TzCaltizuwAAAAC/muzan-demon-slayer.gif" class="pic"><br>
+
+                Promised neverland <br>
+                <img src="https://c.tenor.com/CtGicfTzOHEAAAAd/conny-connie-tpn.gif" class="pic"><br>
+
+                Spy x family <br>
+                <img src="https://c.tenor.com/TthtcYm-oSkAAAAC/anya-punch.gif" class="pic"><br>
+
+                Jujutsu kaisen <br>
+                <img src="https://c.tenor.com/mw8uAssGVtQAAAAC/jujutsu-kaisen-jujutsu-kaisen0.gif" class="pic"><br>
+
+                Your name <br>
+                <img src="https://c.tenor.com/JuG_c9hsbYwAAAAd/taki-mitsuha.gif" class="pic"><br>
+
+                <br><br>
+            </div>
+
+            <div class="content" id="movies" style="display:none;">
+                <h3>$ movies</h3>
+                Interstellar <br>
+                <img src="https://c.tenor.com/rl7x24bxaRsAAAAd/interstellar-edurance.gif" class="pic"><br>
+
+                Arrival <br>
+                <img src="https://c.tenor.com/GdGKiF2C4fkAAAAC/arrival-arrival-alien.gif" class="pic"><br>
+
+                Decision to leave <br>
+                <img src="https://media.tenor.com/mSUiIb-QMgAAAAAC/tangwei-decisiontoleave.gif" class="pic"><br>
+
+                Dune <br>
+                <img src="https://c.tenor.com/TtN6Y0bjR7YAAAAC/giving-the-sign-timothee-chalamet.gif" class="pic"><br>
+
+                Shutter island <br>
+                <img src="https://c.tenor.com/euDIafdKSIAAAAAC/shutter-island-leonardo-dicaprio.gif" class="pic"><br>
+
+                Blade runner 2049 <br>
+                <img src="https://c.tenor.com/o28rzKUhbXUAAAAC/blade-runner2049-blade-runner.gif" class="pic"><br>
+
+                Inception <br>
+                <img src="https://c.tenor.com/ZZNyJ27OEzcAAAAC/inception-limbo.gif" class="pic"><br>
+                <br><br>
+            </div>
+
+        </div>
+
+    </body>
+
+    <script>
+        let active_div = "home"
+        function home() {
+            document.getElementById(active_div).style.display="none";
+            document.getElementById("home").style.display="block";
+            active_div = "home"
+        }
+        function anime() {
+            document.getElementById(active_div).style.display="none";
+            document.getElementById("anime").style.display="block";
+            active_div = "anime"
+        }
+        function movies() {
+            document.getElementById(active_div).style.display="none";
+            document.getElementById("movies").style.display="block";
+            active_div = "movies"
+        }
+    </script>
+
+</html>
