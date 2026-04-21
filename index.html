@@ -1,107 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="./styles.css">
-        <link rel="icon" type="image/png" href="https://github.com/soupfoo.png">
-        <title>$HOME</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="https://github.com/soupfoo.png" />
+    <title>%SystemRoot%</title>
+  </head>
 
-    <body>
-        <ul class="nav">
-            <li><a onclick="home()">🏠 home</a></li>
-            <li><a onclick="anime()">🇯🇵 anime</a></li>
-            <li><a onclick="movies()">📺 movies</a></li>
-            <li><a href="https://github.com/soupfoo">😺 github</a></li>
-        </ul>
-
-        <div class="container">
-            <div class="fetch">
-                <h3>$ ./fetch.sh </h3>
-                <img class="pic" src="https://github.com/soupfoo.png"> <br>
-                usr - soup <br>
-                langs - C <br> <br>
-                
-                things I like: <br>
-                - dumplings <br>
-                - rain <br>
-                - cats <br>
-            </div>
-
-
-            <div class="content" id="home" style="display:block;">
-                <h3>$ under construction 🛠️</h3>
-            </div>
-
-            <div class="content" id="anime" style="display:none;">
-                <h3>$ anime </h3>
-                Hyouka <br>
-                <img src="https://c.tenor.com/GGA8K8d9L7kAAAAC/hyouka-chitanda-eru.gif" class="pic"><br>
-
-                Kimetsu no yaiba <br>
-                <img src="https://c.tenor.com/9TzCaltizuwAAAAC/muzan-demon-slayer.gif" class="pic"><br>
-
-                Promised neverland <br>
-                <img src="https://c.tenor.com/CtGicfTzOHEAAAAd/conny-connie-tpn.gif" class="pic"><br>
-
-                Spy x family <br>
-                <img src="https://c.tenor.com/TthtcYm-oSkAAAAC/anya-punch.gif" class="pic"><br>
-
-                Jujutsu kaisen <br>
-                <img src="https://c.tenor.com/mw8uAssGVtQAAAAC/jujutsu-kaisen-jujutsu-kaisen0.gif" class="pic"><br>
-
-                Your name <br>
-                <img src="https://c.tenor.com/JuG_c9hsbYwAAAAd/taki-mitsuha.gif" class="pic"><br>
-
-                <br><br>
-            </div>
-
-            <div class="content" id="movies" style="display:none;">
-                <h3>$ movies</h3>
-                Interstellar <br>
-                <img src="https://c.tenor.com/rl7x24bxaRsAAAAd/interstellar-edurance.gif" class="pic"><br>
-
-                Arrival <br>
-                <img src="https://c.tenor.com/GdGKiF2C4fkAAAAC/arrival-arrival-alien.gif" class="pic"><br>
-
-                Decision to leave <br>
-                <img src="https://media.tenor.com/mSUiIb-QMgAAAAAC/tangwei-decisiontoleave.gif" class="pic"><br>
-
-                Dune <br>
-                <img src="https://c.tenor.com/TtN6Y0bjR7YAAAAC/giving-the-sign-timothee-chalamet.gif" class="pic"><br>
-
-                Shutter island <br>
-                <img src="https://c.tenor.com/euDIafdKSIAAAAAC/shutter-island-leonardo-dicaprio.gif" class="pic"><br>
-
-                Blade runner 2049 <br>
-                <img src="https://c.tenor.com/o28rzKUhbXUAAAAC/blade-runner2049-blade-runner.gif" class="pic"><br>
-
-                Inception <br>
-                <img src="https://c.tenor.com/ZZNyJ27OEzcAAAAC/inception-limbo.gif" class="pic"><br>
-                <br><br>
-            </div>
-
+  <body>
+    <div class="container">
+      <aside class="fetch" aria-label="profile">
+        <div class="window-title">
+          <div class="win-buttons">
+            <span class="win-btn">❌</span>
+            <span class="win-btn">🔲</span>
+            <span class="win-btn">🔳</span>
+          </div>
+          <div class="win-label">Info</div>
         </div>
+        <div class="window-body">
+          <img class="pic" src="https://github.com/soupfoo.png" alt="avatar" />
+          <br />
+          <div class="meta">
+            <div class="usr">username - soup</div>
+            <div class="langs">langs - C, Py, Go</div>
+          </div>
+          <br />
+          <div class="likes">
+            <strong>things I like:</strong>
+            <ul>
+              <li>dumplings</li>
+              <li>rain</li>
+              <li>cats</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
 
-    </body>
+      <main class="content" id="home">
+        <div class="window-title">
+          <div class="win-buttons">
+            <span class="win-btn">❌</span>
+            <span class="win-btn">🔲</span>
+            <span class="win-btn">🔳</span>
+          </div>
+          <div class="win-label">Repositories</div>
+        </div>
+        <div class="window-body">
+          <div id="repo-list"></div>
+        </div>
+      </main>
 
-    <script>
-        let active_div = "home"
-        function home() {
-            document.getElementById(active_div).style.display="none";
-            document.getElementById("home").style.display="block";
-            active_div = "home"
-        }
-        function anime() {
-            document.getElementById(active_div).style.display="none";
-            document.getElementById("anime").style.display="block";
-            active_div = "anime"
-        }
-        function movies() {
-            document.getElementById(active_div).style.display="none";
-            document.getElementById("movies").style.display="block";
-            active_div = "movies"
-        }
-    </script>
+      <div class="terminal">
+        <div class="window-title">
+          <div class="win-buttons">
+            <span class="win-btn">❌</span>
+            <span class="win-btn">🔲</span>
+            <span class="win-btn">🔳</span>
+          </div>
+          <div class="win-label">Terminal</div>
+        </div>
+        <div class="window-body">
+          <pre class="terminal-output">-> echo $TERM</pre>
+          <pre class="terminal-output">xterm-webtty</pre>
+          <pre class="terminal-output">-> ls -a </pre>
+          <pre
+            class="terminal-output"
+          >.<br>..<br>index.html<br>JetBrainsMono-Medium.ttf<br>LICENSE<br>README.md<br>styles.css</pre>
+        </div>
+      </div>
+    </div>
+  </body>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const username = "soupfoo";
+      const Repos = [
+        { name: "nucore", language: "Go", description: "*nix coreutils" },
+        {
+          name: "soupfet",
+          language: "Go",
+          description: "A system info fetch tool for Linux",
+        },
+        { name: "godc", language: "Go", description: "A postfix calculator" },
+        {
+          name: "yuki",
+          language: "Go",
+          description: "A bytecode compiled imperative programming language",
+        },
+      ];
+
+      const repoList = document.getElementById("repo-list");
+      repoList.innerHTML = "";
+
+      for (const r of Repos) {
+        const repoName = r.name;
+        const lang = r.language;
+        const desc = r.description;
+        const url = `https://github.com/${username}/${repoName}`;
+
+        const el = document.createElement("a");
+        el.className = "repo-link";
+        el.href = url;
+        el.target = "_blank";
+        el.rel = "noopener noreferrer";
+
+        el.innerHTML = `
+                    <div class="rheader">
+                        <span class="rname">${repoName}</span>
+                        <div class="rstats">${lang}</div>
+                    </div>
+                    <div class="rmeta">${desc}</div>
+                `;
+
+        repoList.appendChild(el);
+      }
+    });
+  </script>
 </html>
