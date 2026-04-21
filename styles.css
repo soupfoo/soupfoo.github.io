@@ -201,11 +201,9 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--button-bg);
   color: var(--fontcol);
   font-size: 0.75rem;
   padding: 0.2rem 0.3rem;
-  border-radius: 50%;
   opacity: 0.9;
   pointer-events: none;
 }
