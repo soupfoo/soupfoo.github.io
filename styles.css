@@ -1,16 +1,16 @@
 :root {
-  --bodybg: #1a1c21;
+  --bodybg: #1d1d1f;
   --divbg: #17181b;
   --cardbg: #1e2024;
   --hover-border: #855757;
   --fontcol: #d7d7d7;
-  --bordercol: #4d525b;
+  --bordercol: #666a72;
+  --border-inactive: rgb(79, 82, 88);
   --shadow: #000000;
   --linkcol: #e26a6a;
   --accentcol: #90b4e9;
   --accentborder: rgb(54, 62, 72);
   --titlebar-bg: rgb(19, 19, 22);
-  --separator: rgb(76, 79, 85);
   --button-bg: rgb(32, 33, 36);
   --button-border: rgb(54, 56, 57);
 }
@@ -59,6 +59,9 @@ body {
   border: 1.5px solid var(--bordercol);
   padding: 0rem;
   font-size: 0.95rem;
+}
+.content {
+  border: 1.5px solid var(--border-inactive);
 }
 
 .likes ul {
@@ -178,7 +181,7 @@ body {
   justify-content: flex-start;
   padding: 0.5em;
   background: var(--titlebar-bg);
-  border-bottom: 1px solid var(--separator);
+  border-bottom: 1.5px solid var(--border-inactive);
   border-radius: 6px 6px 0 0;
   position: relative;
 }
@@ -221,7 +224,7 @@ body {
 
 .terminal {
   grid-column: 1 / -1;
-  border: 1.5px solid var(--bordercol);
+  border: 1.5px solid var(--border-inactive);
   border-radius: 6px;
   background-color: rgb(0, 0, 0);
 }
