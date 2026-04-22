@@ -2,12 +2,12 @@
   --bodybg: #1c1e20;
   --divbg: #17181b;
   --cardbg: #1e2024;
-  --hover-border: #576ba7;
+  --hover-border: #5758a7;
   --fontcol: #d7d7d7;
-  --bordercol: #666a72;
+  --bordercol: #303032;
   --shadow: rgba(0, 0, 0, 0.5);
-  --linkcol: #6a82e2;
-  --accentborder: rgb(54, 62, 72);
+  --linkcol: #937ff8;
+  --accentborder: rgba(54, 62, 72, 0.687);
   --titlebar-bg: rgb(19, 19, 22);
 }
 
@@ -39,9 +39,9 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 1rem;
-  max-width: 1400px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -49,15 +49,12 @@ body {
 .fetch,
 .content {
   border-radius: 8px;
+  border: 1px solid var(--bordercol);
   box-shadow: 0 0 8px var(--shadow);
   color: var(--fontcol);
   background-color: var(--divbg);
   padding: 0rem;
   font-size: 0.95rem;
-}
-
-.fetch {
-  color: rgba(255, 255, 255, 0.65);
 }
 
 .likes ul {
@@ -77,12 +74,12 @@ body {
 }
 @media (min-width: 800px) {
   #repo-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (min-width: 1200px) {
   #repo-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -166,14 +163,13 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 0.5rem;
-  background: var(--titlebar-bg);
+  background: linear-gradient(180deg, #28282c 0%, var(--titlebar-bg) 100%);
+  border-bottom: 1px solid var(--bordercol);
+  box-shadow:
+    inset 0 1px 0 rgba(73, 78, 90, 0.831),
+    0 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 8px 8px 0 0;
   position: relative;
-}
-
-.fetch .window-title,
-.content .window-title {
-  padding: 1rem;
 }
 
 .window-body {
@@ -194,7 +190,16 @@ body {
   font-size: 0.75rem;
   padding: 0.18rem;
   opacity: 0.9;
-  pointer-events: none;
+  filter: grayscale(100%) sepia(10%) hue-rotate(280deg);
+  cursor: pointer;
+}
+
+.content:hover,
+.fetch:hover,
+.terminal:hover {
+  .win-btn {
+    filter: none;
+  }
 }
 
 .win-label {
@@ -210,8 +215,9 @@ body {
 
 .terminal {
   grid-column: 1 / -1;
+  border: 1px solid var(--bordercol);
   border-radius: 8px;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--divbg);
 }
 
 .terminal .window-body {
@@ -221,7 +227,6 @@ body {
 .terminal-output {
   color: rgb(153, 168, 222);
   border-radius: 8px;
-  font-family: jetbrains, monospace;
   font-size: 0.9rem;
   white-space: pre-wrap;
 }
