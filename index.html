@@ -12,11 +12,6 @@
     <div class="container">
       <aside class="fetch" aria-label="profile">
         <div class="window-title">
-          <div class="win-buttons">
-            <span class="win-btn">🔴</span>
-            <span class="win-btn">🟡</span>
-            <span class="win-btn">🟢</span>
-          </div>
           <div class="win-label">Info</div>
         </div>
         <div class="window-body">
@@ -24,7 +19,7 @@
           <br />
           <div class="meta">
             <div class="usr">username - soup</div>
-            <div class="langs">langs - C, Py, Go</div>
+            <div class="langs">langs - C, Python, Go</div>
           </div>
           <br />
           <div class="likes">
@@ -40,11 +35,6 @@
 
       <main class="content" id="home">
         <div class="window-title">
-          <div class="win-buttons">
-            <span class="win-btn">🔴</span>
-            <span class="win-btn">🟡</span>
-            <span class="win-btn">🟢</span>
-          </div>
           <div class="win-label">Repositories</div>
         </div>
         <div class="window-body">
@@ -77,16 +67,14 @@
     document.addEventListener("DOMContentLoaded", async () => {
       const username = "soupfoo";
       const Repos = [
-        { name: "nucore", language: "Go", description: "*nix coreutils" },
+        { name: "nucore", description: "*nix coreutils" },
         {
           name: "soupfet",
-          language: "Go",
           description: "A system info fetch tool for Linux",
         },
-        { name: "godc", language: "Go", description: "A postfix calculator" },
+        { name: "godc", description: "A postfix calculator" },
         {
           name: "yuki",
-          language: "Go",
           description: "A bytecode compiled imperative programming language",
         },
       ];
@@ -96,7 +84,6 @@
 
       for (const r of Repos) {
         const repoName = r.name;
-        const lang = r.language;
         const desc = r.description;
         const url = `https://github.com/${username}/${repoName}`;
 
@@ -109,10 +96,8 @@
         el.innerHTML = `
                     <div class="rheader">
                         <span class="rname">${repoName}</span>
-                        <div class="rstats">${lang}</div>
                     </div>
-                    <div class="rmeta">${desc}</div>
-                `;
+                    <div class="rdesc">${desc}</div>`;
 
         repoList.appendChild(el);
       }
